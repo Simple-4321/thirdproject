@@ -7,6 +7,7 @@
       <span slot="index" slot-scope="text, record, index">{{ index }}</span>
       <span
         slot="meeting"
+        class="meeting-name"
         slot-scope="text, record"
         @click="() => checkInfo(record)"
       >
@@ -104,5 +105,8 @@ export default {
 <style>
 .addbtn {
   margin-bottom:14px
+}
+.meeting-name {
+  cursor: pointer;
 }
 </style>
