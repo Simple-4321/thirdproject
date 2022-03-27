@@ -139,10 +139,11 @@ export default {
         min-width: 260px;
         width: 368px;
         margin: 0 auto;
+        margin-top: 100px;
       }
 
       .footer {
-        // position: absolute;
+        position: absolute;
         width: 100%;
         bottom: 0;
         padding: 0 16px;
