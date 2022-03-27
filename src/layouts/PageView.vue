@@ -10,3 +10,9 @@ export default {
   name: 'PageView'
 }
 </script>
+
+<style scoped>
+>>> .ant-page-header-heading {
+  display: none;
+}
+</style>

@@ -10,5 +10,13 @@ export default {
     'meetingnumber': '腾讯会议号',
     'duration': '会议时长',
     'limit': '参会人数',
-    'Upload': 'Upload'
+    'Upload': 'Upload',
+    'please input meeting name': '请输入会议名称',
+    'please input address': '请输入会议地址',
+    'please input duration': '请输入会议时长',
+    'please input organizer': '请输入会议主办方',
+    'please input meetingnumber': '请输入会议号',
+    'please input limit': '请输入限制人数',
+    'please input participant': '请输入参与者',
+    'please input meetingtime': '请输入会议时间'
 }

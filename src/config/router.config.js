@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { UserLayout, BasicLayout, BlankLayout } from '@/layouts'
+import { UserLayout, BasicLayout, BlankLayout, PageView } from '@/layouts'
 
 const RouteView = {
   name: 'RouteView',
@@ -11,46 +11,47 @@ export const asyncRouterMap = [
     path: '/',
     name: 'index',
     component: BasicLayout,
-    meta: { title: 'menu.home' },
-    redirect: 'list',
+    meta: { title: '读片会管理员系统' },
+    redirect: 'meeting',
     children: [
-      // forms
-      // {
-      //   path: '/form',
-      //   redirect: '/form/base-form',
-      //   component: RouteView,
-      //   meta: { title: 'menu.form', icon: 'form', permission: ['form'] },
-      //   children: [
-      //     {
-      //       path: '/form/base-form',
-      //       name: 'BaseForm',
-      //       component: () => import('@/views/form/basicForm'),
-      //       meta: { title: 'menu.form.basic-form', keepAlive: true, permission: ['form'] }
-      //     }
-      //   ]
-      // },
       // list
       {
-        path: '/list',
-        name: 'list',
-        component: RouteView,
-        redirect: '/list/table-list',
-        meta: { title: 'menu.list', icon: 'table', permission: ['table'] },
+        path: '/meeting',
+        name: 'meeting',
+        component: PageView,
+        redirect: '/meeting/Manage',
+        meta: { title: '会议管理', icon: 'table', permission: ['table'] },
         children: [
           {
-            path: '/list/edit',
-            name: 'editfrom',
-            hidden: true,
-            hideInMenu: true, // 强制显示 MenuItem 而不是 SubMenu
-            component: () => import('@/views/list/component'),
-            meta: { title: 'menu.list.form', keepAlive: true, permission: ['table'] }
-          },
-          {
-            path: '/list/table-list',
-            name: 'TableListWrapper',
-            hideChildrenInMenu: true, // 强制显示 MenuItem 而不是 SubMenu
-            component: () => import('@/views/list'),
-            meta: { title: 'list', keepAlive: true, permission: ['table'] }
+            path: '/meeting/Manage',
+            name: 'MettingManage',
+            component: RouteView,
+            hideChildrenInMenu: true,
+            redirect: '/meeting/Manage/list',
+            meta: { title: '会议管理', keepAlive: false, permission: ['table'] },
+            children: [
+              {
+                path: '/meeting/Manage/list',
+                name: 'MettingManageList',
+                hidden: true,
+                component: () => import('@/views/list'),
+                meta: { title: '会议列表', keepAlive: false, permission: ['table'] }
+              },
+              {
+                path: '/meeting/Manage/:type',
+                name: 'MettingEdit',
+                hidden: true,
+                component: () => import('@/views/list/component/Edit'),
+                meta: { title: '会议编辑', keepAlive: true, permission: ['table'] }
+              },
+              {
+                path: '/meeting/Manage/Detail/:id',
+                name: 'MettingInfo',
+                hidden: true,
+                component: () => import('@/views/list/component/Info'),
+                meta: { title: '会议详情', keepAlive: false, permission: ['table'] }
+              }
+            ]
           }
         ]
       }

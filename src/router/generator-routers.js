@@ -25,7 +25,8 @@ const constantRouterComponents = {
 
   // list
   TableList: () => import('@/views/list/TableList'),
-  EditFrom: () => import(/* webpackChunkName: "EditFrom" */ '@/views/list/component'),
+  MettingManage: () => import(/* webpackChunkName: "MettingEdit" */ '@/views/list'),
+  MettingEdit: () => import(/* webpackChunkName: "MettingEdit" */ '@/views/list/component'),
   StandardList: () => import('@/views/list/BasicList'),
   CardList: () => import('@/views/list/CardList'),
   SearchLayout: () => import('@/views/list/search/SearchLayout'),

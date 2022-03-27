@@ -10,5 +10,13 @@ export default {
     'meetingnumber': 'meetingnumber',
     'duration': 'duration',
     'limit': 'limit',
-    'Upload': 'Upload'
+    'Upload': 'Upload',
+    'please input meeting name': 'please input meeting name',
+    'please input address': 'please input address',
+    'please input duration': 'please input duration',
+    'please input organizer': 'please input organizer',
+    'please input meetingnumber': 'please input meetingnumber',
+    'please input limit': 'please input limit',
+    'please input participant': 'please input participant',
+    'please input meetingtime': 'please input meetingtime'
 }

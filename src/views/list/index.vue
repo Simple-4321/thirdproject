@@ -5,6 +5,13 @@
       </a-button>
       <a-table :columns="columns" :data-source="data" rowKey="id">
       <span slot="index" slot-scope="text, record, index">{{ index }}</span>
+      <span
+        slot="meeting"
+        slot-scope="text, record"
+        @click="() => checkInfo(record)"
+      >
+        {{ text }}
+      </span>
       <div slot="action" slot-scope="text, record">
         <a href="#" @click="() => edit(record)">编辑</a>
         <span>&nbsp;|&nbsp;</span>
@@ -29,12 +36,13 @@ export default {
           columns: [{
             dataIndex: 'index',
             key: 'index',
-            slots: { title: '序号' },
+            title: '序号',
             scopedSlots: { customRender: 'index' }
           }, {
             dataIndex: 'meeting',
             key: 'meeting',
-            title: '会议名称'
+            title: '会议名称',
+            scopedSlots: { customRender: 'meeting' }
           }, {
             dataIndex: 'organizer',
             key: 'organizer',
@@ -78,14 +86,17 @@ export default {
   },
   methods: {
     moment,
-    edit: function () {
-      this.$router.push('/list/edit')
+    edit: function (record) {
+      this.$router.push(`/meeting/Manage/edit?id=${record.id}`)
+    },
+    checkInfo: function (record) {
+      this.$router.push(`/meeting/Manage/Detail/${record.id}`)
     },
     del: function () {
       console.log('bbb')
     },
     add: function () {
-      this.$router.push('/list/edit')
+      this.$router.push('/meeting/Manage/add')
     }
   }
 }
