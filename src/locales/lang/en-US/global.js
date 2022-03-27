@@ -23,5 +23,6 @@ export default {
     'username or password error': 'username or password error',
     'please input username': 'please input username',
     'please input password': 'please input password',
-    'login': 'login'
+    'login': 'login',
+    'logout': 'logout'
 }

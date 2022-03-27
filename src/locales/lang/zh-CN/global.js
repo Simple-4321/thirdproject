@@ -23,5 +23,6 @@ export default {
     'username or password error': '账户名或密码错误',
     'please input username': '请输入账户名',
     'please input password': '请输入密码',
-    'login': '登录'
+    'login': '登录',
+    'logout': '注销'
 }
