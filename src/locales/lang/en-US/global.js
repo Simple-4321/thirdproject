@@ -18,5 +18,10 @@ export default {
     'please input meetingnumber': 'please input meetingnumber',
     'please input limit': 'please input limit',
     'please input participant': 'please input participant',
-    'please input meetingtime': 'please input meetingtime'
+    'please input meetingtime': 'please input meetingtime',
+    'remember me': 'remember me',
+    'username or password error': 'username or password error',
+    'please input username': 'please input username',
+    'please input password': 'please input password',
+    'login': 'login'
 }

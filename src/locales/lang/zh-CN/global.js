@@ -18,5 +18,10 @@ export default {
     'please input meetingnumber': '请输入会议号',
     'please input limit': '请输入限制人数',
     'please input participant': '请输入参与者',
-    'please input meetingtime': '请输入会议时间'
+    'please input meetingtime': '请输入会议时间',
+    'remember me': '记住我',
+    'username or password error': '账户名或密码错误',
+    'please input username': '请输入账户名',
+    'please input password': '请输入密码',
+    'login': '登录'
 }
