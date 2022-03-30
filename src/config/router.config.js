@@ -38,7 +38,14 @@ export const asyncRouterMap = [
                 meta: { title: '会议列表', keepAlive: false, permission: ['table'] }
               },
               {
-                path: '/meeting/Manage/:type',
+                path: '/meeting/Manage/add',
+                name: 'MettingAdd',
+                hidden: true,
+                component: () => import('@/views/list/component/Edit'),
+                meta: { title: '添加会议', keepAlive: true, permission: ['table'] }
+              },
+              {
+                path: '/meeting/Manage/edit/:id',
                 name: 'MettingEdit',
                 hidden: true,
                 component: () => import('@/views/list/component/Edit'),
@@ -49,7 +56,7 @@ export const asyncRouterMap = [
                 name: 'MettingInfo',
                 hidden: true,
                 component: () => import('@/views/list/component/Info'),
-                meta: { title: '会议详情', keepAlive: false, permission: ['table'] }
+                meta: { title: '会议详情', keepAlive: true, permission: ['table'] }
               }
             ]
           }

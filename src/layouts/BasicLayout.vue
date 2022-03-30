@@ -30,6 +30,7 @@ import { mapState } from 'vuex'
 import { CONTENT_WIDTH_TYPE, SIDEBAR_TYPE, TOGGLE_MOBILE_TYPE } from '@/store/mutation-types'
 
 import defaultSettings from '@/config/defaultSettings'
+import { asyncRouterMap } from '@/config/router.config'
 import RightContent from '@/components/GlobalHeader/RightContent'
 import GlobalFooter from '@/components/GlobalFooter'
 import Ads from '@/components/Other/CarbonAds'
@@ -50,7 +51,7 @@ export default {
       isProPreviewSite: process.env.VUE_APP_PREVIEW === 'true' && process.env.NODE_ENV !== 'development',
       // end
       isDev: process.env.NODE_ENV === 'development' || process.env.VUE_APP_PREVIEW === 'true',
-
+      asyncRouterMap,
       // base
       menus: [],
       // 侧栏收起状态
@@ -86,7 +87,7 @@ export default {
     })
   },
   created () {
-    const routes = this.mainMenu.find(item => item.path === '/')
+    const routes = this.asyncRouterMap.find(item => item.path === '/')
     this.menus = (routes && routes.children) || []
     // 处理侧栏收起状态
     this.$watch('collapsed', () => {

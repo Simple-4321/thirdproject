@@ -48,9 +48,12 @@ export default {
           // return new Promise((resolve, reject) => {
           //   setTimeout(Math.random() > 0.5 ? resolve : reject, 1500)
           // }).catch(() => console.log('Oops errors!'))
-          return this.$store.dispatch('Logout').then(() => {
+          // return this.$store.dispatch('Logout').then(() => {
+          //   this.$router.push({ name: 'login' })
+          // })
+          // return () => {
             this.$router.push({ name: 'login' })
-          })
+          // }
         },
         onCancel () {}
       })
